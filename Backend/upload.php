@@ -1,10 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION['id']))header('Location: login.php')
-// if (!isset($_SESSION['username'])) {
-//     header("location: login.php");
-//     exit;
-// }
+if (!isset($_SESSION['username'])) {
+    header("location: login.php");
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_FILES['blog_image']['error'] === UPLOAD_ERR_OK) {
